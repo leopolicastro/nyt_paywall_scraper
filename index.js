@@ -23,13 +23,14 @@ app.get("/", function(req, res) {
       res.render("article", { data, title });
     });
   } else {
-    res.json({ error: "URL Param not defined." });
+    res.send(
+      "Place your paid NYT article in the URL above like this. nyt.thruhere.net/?url=pastearticlehere"
+    );
   }
 });
 
 /* LISTEN ON PORT */
 app.listen("8081");
-console.log("NYT Started on Port 8081");
 exports = module.exports = app;
 
 if (process.env.NODE_ENV === "production") {
