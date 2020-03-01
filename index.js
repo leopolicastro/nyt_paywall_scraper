@@ -23,15 +23,14 @@ app.get("/", function(req, res) {
       res.render("article", { data, title });
     });
   } else {
-    res.send(
-      "Place your paid NYT article in the URL above like this. nyt.thruhere.net/?url=pastearticlehere"
-    );
+    res.render("home");
   }
+
+  // "<div class='d-flex'</div>"
 });
 
-/* LISTEN ON PORT */
-app.listen("8081");
-exports = module.exports = app;
+// /* LISTEN ON PORT */
+// app.listen("8081");
 
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
