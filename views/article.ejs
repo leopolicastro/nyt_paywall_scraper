@@ -12,18 +12,15 @@
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container" style="height: auto; margin-bottom: 10rem;">
       <h1><%- title %></h1>
-      <article>
+      <article style="overflow: scroll;">
         <%-data%>
       </article>
     </div>
-    <a href="/">Home</a>
-    <div
-      style="position: absolute; bottom: 0; right: 0; left: 0;"
-      class="bold text-center p-5"
-    >
-      <b>LBP</b>
+
+    <div class="bold text-center p-5 mt-5 sticky-bottom">
+      <a href="/"><b>LBP</b></a>
     </div>
   </body>
 </html>
