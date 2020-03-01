@@ -8,5 +8,9 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "request": "^2.88.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   }
 }
