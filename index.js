@@ -3,9 +3,6 @@ const request = require("request");
 const cheerio = require("cheerio");
 const app = express();
 
-const publicDirectoryPath = path.join(__dirname, "../public/");
-app.use(express.static(publicDirectoryPath));
-
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
@@ -29,7 +26,7 @@ app.get("/", function(req, res) {
   }
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`API listening on port ${port}...`);
-});
+/* LISTEN ON PORT */
+app.listen("8081");
+console.log("NYT Started on Port 8081");
+exports = module.exports = app;
