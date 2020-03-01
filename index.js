@@ -3,6 +3,9 @@ const request = require("request");
 const cheerio = require("cheerio");
 const app = express();
 
+const publicDirectoryPath = path.join(__dirname, "../public/");
+app.use(express.static(publicDirectoryPath));
+
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
@@ -26,7 +29,16 @@ app.get("/", function(req, res) {
   }
 });
 
-/* LISTEN ON PORT */
-app.listen("8081");
-console.log("NYT Started on Port 8081");
-exports = module.exports = app;
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "client/build")));
+  // Handle React routing, return all requests to React app
+  app.get("*", (request, response) => {
+    response.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`API listening on port ${port}...`);
+});
