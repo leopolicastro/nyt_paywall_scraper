@@ -16,17 +16,22 @@
     <div class="container mt-5" style="text-align: text-center;">
       <h1 class="text-center m-5">NYT</h1>
       <div class="d-flex justify-content-center" method="get" actions="/">
-        <form id="myform" style="text-align: text-center;">
-          <label for="nyturl">URL</label>
+        <form
+          id="myform"
+          style="text-align: text-center;"
+          class="d-flex flex-column shadow-lg p-5"
+        >
+          <label class="text-center" for="nyturl">URL</label>
           <input
             id="urlinput"
             type="text"
             name="nyturl"
             autofocus
             placeholder="nyt article url"
-            class="text-center"
+            class="text-center w-100"
+            autocomplete="off"
           />
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" class="btn btn-primary w-75 mx-auto m-5">
             Submit
           </button>
         </form>
