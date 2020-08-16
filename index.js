@@ -7,6 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
+  console.log(req.query.url)
   let url = req.query.url ? req.query.url : null;
   if (url) {
     console.log("Scrape Request initiated: " + url);
