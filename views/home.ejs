@@ -15,12 +15,12 @@
     />
   </head>
   <body>
-    <div class="container mt-5" style="text-align: text-center;">
+    <div class="container mt-5" style="text-align: text-center">
       <h1 class="text-center m-5">NYT</h1>
       <div class="d-flex justify-content-center" method="get" actions="/">
         <form
           id="myform"
-          style="text-align: text-center;"
+          style="text-align: text-center"
           class="d-flex flex-column shadow-lg p-5"
         >
           <label class="text-center" for="nyturl">URL</label>
@@ -40,7 +40,7 @@
       </div>
     </div>
     <div
-      style="position: absolute; bottom: 0; right: 0; left: 0;"
+      style="position: absolute; bottom: 0; right: 0; left: 0"
       class="bold text-center p-5"
     >
       <b>LBP</b>
@@ -62,14 +62,12 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      console.log("Worked");
-      const form = document.querySelector("#myform");
-      form.addEventListener("submit", e => {
+      const form = document.querySelector('#myform');
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
-        let input = document.querySelector("#urlinput").value;
+        let input = document.querySelector('#urlinput').value;
         input = input.trim();
-        console.log(input);
-        window.location = `https://nyt.leopolicastro.com/?url=` + input;
+        window.location = `https://nyt.leopolicastro.com/?url=${input}`;
       });
     </script>
   </body>
